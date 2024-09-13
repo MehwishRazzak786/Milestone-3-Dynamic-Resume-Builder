@@ -47,7 +47,7 @@ form.addEventListener('submit', (e: Event) => {
     displayName.textContent = `Name: ${nameInput.value}`;
     displayEmail.textContent = `Email: ${emailInput.value}`;
     displayContact.textContent = `Contact: ${contactInput.value}`;
-    displayProfilePic.src = profilePicInput.value || 'default.jpg';
+    displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
 
     // Update education
     displayGraduation.textContent = `Graduation: ${graduationInput.value}`;
