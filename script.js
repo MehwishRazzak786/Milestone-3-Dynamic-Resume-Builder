@@ -42,7 +42,7 @@ form.addEventListener('submit', function (e) {
     displayName.textContent = "Name: ".concat(nameInput.value);
     displayEmail.textContent = "Email: ".concat(emailInput.value);
     displayContact.textContent = "Contact: ".concat(contactInput.value);
-    displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
+    displayProfilePic.src = profilePicInput.value || 'default.jpg';
     // Update education
     displayGraduation.textContent = "Graduation: ".concat(graduationInput.value);
     displayIntermediate.textContent = "Intermediate: ".concat(intermediateInput.value);
