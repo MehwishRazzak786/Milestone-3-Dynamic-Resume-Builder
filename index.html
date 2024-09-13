@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="text-align: center;box-shadow: 0px 0px 15px #004d40;border-style:outset;font-family:Arial, Helvetica, sans-serif;color:#00796b;">Dynamic Resume Builder</h1>
+
+
+    <!-- Form to collect user input -->
+    <form id="resume-form">
+        <fieldset>
+        
+        <!-- Personal Information -->
+         <h1 style="color: white;text-decoration: underline;">
+        Personal Information</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" required>
+        
+        <label for="profile-pic">Profile Picture URL:</label>
+        <input type="images/pic.jpg" id="profile-pic">
+    </fieldset>
+
+    <fieldset>
+        
+        <!-- Education -->
+        <h1 style="color: white; text-decoration: underline;">Education</h1>
+        <label for="graduation">Graduation:</label>
+        <input type="text" id="graduation" required>
+        
+        <label for="intermediate">Intermediate:</label>
+        <input type="text" id="intermediate" required>
+        
+        <label for="matriculation">Matriculation:</label>
+        <input type="text" id="matriculation" required>
+    </fieldset>
+
+
+    <fieldset>    
+        <!-- Work Experience -->
+        <h1 style="color: white;text-decoration: underline;">Work Experience</h1>
+        <label for="current-job">Current Job:</label>
+        <input type="text" id="current-job" required>
+        
+        <label for="previous-job">Previous Job:</label>
+        <input type="text" id="previous-job" required>
+    </fieldset>
+
+    <fieldset>    
+        <!-- Skills -->
+        <h1 style="color: white;text-decoration: underline;">Skills</h1>
+        <label for="skills">Add a skill:</label>
+        <input type="text" id="skill-input">
+        <button type="button" id="add-skill-btn" style="font-size: 15px;">Add Skill</button>
+        
+        <!-- Display Added Skills -->
+        <ul id="skills-list"></ul>
+    </fieldset>
+        
+        <!-- Submit Button -->
+        <button type="submit" style="font-size: 15px;">Generate Resume</button>
+    </form>
+
+    <!-- Section to display the generated resume -->
+    <section id="dynamic-resume">
+        <h1 style="text-align: center; font-size: xx-large;box-shadow: 0px 0px 15px #004d40;border-style: outset;">Resume</h1>
+        
+        <!-- Personal Information -->
+        <div id="display-personal-info">
+            <img id="display-profile-pic" src="" alt="Profile Picture">
+            <h2 style="text-decoration: underline;">Personal Information</h2>
+            <p id="display-name"></p>
+            <p id="display-email"></p>
+            <p id="display-contact"></p>
+        </div>
+        
+        <!-- Education -->
+        <div id="display-education">
+            <h2 style="text-decoration: underline;">Education</h2>
+            <p id="display-graduation"></p>
+            <p id="display-intermediate"></p>
+            <p id="display-matriculation"></p>
+        </div>
+        
+        <!-- Work Experience -->
+        <div id="display-work-experience">
+            <h2 style="text-decoration: underline;">Work Experience</h2>
+            <p id="display-current-job"></p>
+            <p id="display-previous-job"></p>
+        </div>
+        
+        <!-- Skills -->
+        <div id="display-skills">
+            <h2 style="text-decoration: underline;">Skills</h2>
+            <ul id="display-skills-list"></ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
