@@ -37,12 +37,30 @@ addSkillBtn.addEventListener('click', function () {
 });
 // Form submit event
 form.addEventListener('submit', function (e) {
+    var _a;
     e.preventDefault();
     // Update personal information
     displayName.textContent = "Name: ".concat(nameInput.value);
     displayEmail.textContent = "Email: ".concat(emailInput.value);
     displayContact.textContent = "Contact: ".concat(contactInput.value);
-    displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
+    //displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
+    displayProfilePic.src = ((_a = profilePicInput.files) === null || _a === void 0 ? void 0 : _a[0]) ? URL.createObjectURL(profilePicInput.files[0]) : 'images/pic.jpg';
+    // Function to handle file input and preview image
+    profilePicInput.addEventListener('change', function (event) {
+        var input = event.target;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var _a;
+                displayProfilePic.src = (_a = e.target) === null || _a === void 0 ? void 0 : _a.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+        else {
+            // If no file selected, use default image
+            displayProfilePic.src = 'images/pic.jpg'; // Replace with the path to your default image
+        }
+    });
     // Update education
     displayGraduation.textContent = "Graduation: ".concat(graduationInput.value);
     displayIntermediate.textContent = "Intermediate: ".concat(intermediateInput.value);

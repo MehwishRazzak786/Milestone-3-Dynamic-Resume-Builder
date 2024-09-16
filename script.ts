@@ -47,7 +47,27 @@ form.addEventListener('submit', (e: Event) => {
     displayName.textContent = `Name: ${nameInput.value}`;
     displayEmail.textContent = `Email: ${emailInput.value}`;
     displayContact.textContent = `Contact: ${contactInput.value}`;
-    displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
+    //displayProfilePic.src = profilePicInput.value || 'images/pic.jpg';
+    displayProfilePic.src = profilePicInput.files?.[0] ? URL.createObjectURL(profilePicInput.files[0]) : 'images/pic.jpg';
+
+   
+    // Function to handle file input and preview image
+
+profilePicInput.addEventListener('change', (event: Event) => {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            displayProfilePic.src = e.target?.result as string;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        // If no file selected, use default image
+        displayProfilePic.src = 'images/pic.jpg'; // Replace with the path to your default image
+    }
+});
+
+
 
     // Update education
     displayGraduation.textContent = `Graduation: ${graduationInput.value}`;
